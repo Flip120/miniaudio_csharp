@@ -1,0 +1,42 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <NativeLibsDir>$(ProjectDir)..\libs\</NativeLibsDir>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="$(NativeLibsDir)x64\audio_api.dll">
+      <CopyToOutputDirectory Condition="$([MSBuild]::IsOSPlatform('Windows'))">PreserveNewest</CopyToOutputDirectory>
+      <PackagePath>runtimes\win-x64\native</PackagePath>
+      <Pack>True</Pack>
+      <Link>audio_api.dll</Link>
+    </Content>
+    <Content Include="$(NativeLibsDir)lib64\libaudio_api.so">
+      <CopyToOutputDirectory Condition="$([MSBuild]::IsOSPlatform('Linux')) AND '$([System.Runtime.InteropServices.RuntimeInformation]::OSArchitecture)' == 'X64'">PreserveNewest</CopyToOutputDirectory>
+      <PackagePath>runtimes\linux-x64\native</PackagePath>
+      <Pack>True</Pack>
+      <Link>libaudio_api.so</Link>
+    </Content>
+    <Content Include="$(NativeLibsDir)libarm64\libaudio_api.so">
+      <CopyToOutputDirectory Condition="$([MSBuild]::IsOSPlatform('Linux')) AND '$([System.Runtime.InteropServices.RuntimeInformation]::OSArchitecture)' == 'Arm64'">PreserveNewest</CopyToOutputDirectory>
+      <PackagePath>runtimes\linux-arm64\native</PackagePath>
+      <Pack>True</Pack>
+      <Link>libaudio_api.so</Link>
+    </Content>
+    <Content Include="$(NativeLibsDir)osx\libaudio_api.dylib">
+      <CopyToOutputDirectory Condition="$([MSBuild]::IsOSPlatform('OSX'))">PreserveNewest</CopyToOutputDirectory>
+      <PackagePath>runtimes\osx\native</PackagePath>
+      <Pack>True</Pack>
+      <Link>libaudio_api.dylib</Link>
+    </Content>
+  </ItemGroup>
+
+</Project>
