@@ -5,8 +5,6 @@
 
 ma_engine engine;
 
-AudioState fsState;
-
 ma_sound sound;
 
 AUDIO_API int Startup()

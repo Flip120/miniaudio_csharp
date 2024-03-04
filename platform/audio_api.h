@@ -11,23 +11,6 @@
 
 #include "miniaudio.h"
 
-typedef void (AUDIO_API_CALL * AudioApiLogFn)(const char *msg);
-
-typedef enum AudioLogging
-{
-	AUDIO_LOGGING_DEFAULT,
-	AUDIO_LOGGING_ALL,
-	AUDIO_LOGGING_NONE
-} AudioLogging;
-
-typedef struct
-{
-  AudioApiLogFn logInfo;
-  AudioApiLogFn logWarn;
-  AudioApiLogFn logError;
-  AudioLogging level;
-} AudioState;
-
 typedef struct {
   ma_sound* pSound;
 } SoundHandle;
