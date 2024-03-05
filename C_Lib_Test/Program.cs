@@ -4,16 +4,18 @@ class Program
   {
     AudioPlatform.Startup();
 
-    var handle = AudioPlatform.LoadSound("assets/audio/test.wav");
+    var sfxGroup = AudioPlatform.SoundGroupCreate(0);
+    var handle = AudioPlatform.SoundCreate("assets/audio/door_open.wav", 0, sfxGroup);
     var t = new Thread(() =>
     {
-      AudioPlatform.Play(handle);
+      AudioPlatform.SoundPlay(handle);
     });
     t.Start();
+    Console.WriteLine("CACA1");
 
     Thread.Sleep(5000);
 
-    AudioPlatform.UnloadSound(ref handle);
+    AudioPlatform.SoundDestroy(ref handle);
     Console.WriteLine("CACA");
     AudioPlatform.Dispose();
   }

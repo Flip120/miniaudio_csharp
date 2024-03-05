@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <NativeLibsDir>$(ProjectDir)..\libs\</NativeLibsDir>
+    <NativeLibsDir>$(ProjectDir)..\platform\libs\</NativeLibsDir>
   </PropertyGroup>
 
   <ItemGroup>
