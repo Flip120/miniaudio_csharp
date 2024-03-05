@@ -60,7 +60,7 @@ AUDIO_API Sound *SoundCreate(const char *audioFilePath, SoundFlags flags, SoundG
   ma_sound *sound = ma_malloc(sizeof(ma_sound), NULL);
 
   ma_result init_result = ma_sound_init_from_file(&engine, audioFilePath, flags, (ma_sound_group *)soundGroup, NULL, sound);
-  printf("Size of ma_sound %lu\n", sizeof(ma_sound));
+  printf("Size of ma_sound %zu\n", sizeof(ma_sound));
 
   if (init_result != MA_SUCCESS)
   {
