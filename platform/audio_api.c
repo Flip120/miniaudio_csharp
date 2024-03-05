@@ -1,3 +1,4 @@
+#include <stdbool.h>
 #include <stdio.h>
 #include "include/audio_api.h"
 #define MINIAUDIO_IMPLEMENTATION
