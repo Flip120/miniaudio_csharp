@@ -1,16 +1,8 @@
 ﻿using System.Runtime.InteropServices;
 
-internal static class AudioPlatform
+public static class AudioPlatform
 {
 	public const string DLL = "audio_api";
-
-	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public delegate void AudioApiLogFn(IntPtr msg);
-
-	// need to store static references otherwise the delegates will get collected
-	private static readonly AudioApiLogFn logInfo = Log.Info;
-	private static readonly AudioApiLogFn logWarn = Log.Warning;
-	private static readonly AudioApiLogFn logErr = Log.Error;
 
 	[Flags]
 	public enum SoundFlags
