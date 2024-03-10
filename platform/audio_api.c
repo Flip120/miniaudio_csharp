@@ -92,6 +92,11 @@ AUDIO_API int SoundPlay(Sound *sound)
   return true;
 }
 
+AUDIO_API void SoundSetEndCallback(Sound *sound, ma_sound_end_proc endCallback, void *userData)
+{
+  ma_sound_set_end_callback((ma_sound *)sound, endCallback, userData);
+}
+
 AUDIO_API void SoundDestroy(Sound *sound)
 {
   if (sound != NULL)

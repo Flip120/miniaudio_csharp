@@ -12,6 +12,10 @@ public static class AudioPlatform
 		NO_SPATIALIZATION = 0x00004000
 	}
 
+	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+	public delegate void EndCallback(IntPtr userData, IntPtr sound);
+
+
 	[DllImport(DLL)]
 	public static extern bool Startup();
 
@@ -44,6 +48,9 @@ public static class AudioPlatform
 
 	[DllImport(DLL)]
 	public static extern bool SoundPlay(IntPtr handle);
+
+	[DllImport(DLL)]
+	public static extern void SoundSetEndCallback(IntPtr sound, EndCallback endCallback, IntPtr userData);
 
 	[DllImport(DLL)]
 	public static extern void Dispose();
