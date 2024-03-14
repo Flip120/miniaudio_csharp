@@ -53,5 +53,12 @@ public static class AudioPlatform
 	public static extern void SoundSetEndCallback(IntPtr sound, EndCallback endCallback, IntPtr userData);
 
 	[DllImport(DLL)]
+	public static extern void SetListenerDirection(int listenerIndex, float forwardX, float forwardY, float forwardZ);
+
+	[DllImport(DLL)]
+	public static extern void SetListenerPosition(int listenerIndex, float positionX, float positionY, float positionZ);
+
+
+	[DllImport(DLL)]
 	public static extern void Dispose();
 }

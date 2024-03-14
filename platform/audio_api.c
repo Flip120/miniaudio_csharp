@@ -106,6 +106,16 @@ AUDIO_API void SoundDestroy(Sound *sound)
   }
 }
 
+AUDIO_API void SetListenerDirection(ma_uint32 listenerIndex, float forwardX, float forwardY, float forwardZ)
+{
+  ma_engine_listener_set_direction(&engine, listenerIndex, forwardX, forwardY, forwardZ);
+}
+
+AUDIO_API void SetListenerPosition(ma_uint32 listenerIndex, float x, float y, float z)
+{
+  ma_engine_listener_set_position(&engine, listenerIndex, x, y, y);
+}
+
 AUDIO_API void Dispose()
 {
   ma_engine_uninit(&engine);
