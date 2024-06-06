@@ -9,6 +9,7 @@ class Program
     var t = new Thread(() =>
     {
       AudioPlatform.SoundPlay(handle);
+      AudioPlatform.SoundSetLooping(handle, true);
     });
     t.Start();
     Console.WriteLine("CACA1");

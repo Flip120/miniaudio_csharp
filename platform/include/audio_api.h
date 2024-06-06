@@ -39,6 +39,7 @@ AUDIO_API void SoundSetVolume(Sound *sound, float value);
 AUDIO_API int SoundPlay(Sound *sound);
 AUDIO_API void SoundSetEndCallback(Sound *sound, ma_sound_end_proc endCallback, void *userData);
 AUDIO_API void SoundDestroy(Sound *handle);
+AUDIO_API void SoundSetLooping(Sound* handle, bool looping);
 
 AUDIO_API void SetListenerDirection (ma_uint32 listenerIndex, float forwardX, float forwardY, float forwardZ);
 AUDIO_API void SetListenerPosition(ma_uint32 listenerIndex, float x, float y, float z);

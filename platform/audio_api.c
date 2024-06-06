@@ -92,6 +92,10 @@ AUDIO_API int SoundPlay(Sound *sound)
   return true;
 }
 
+AUDIO_API void SoundSetLooping(Sound *sound, bool looping){
+  ma_sound_set_looping((ma_sound *) sound, looping);
+}
+
 AUDIO_API void SoundSetEndCallback(Sound *sound, ma_sound_end_proc endCallback, void *userData)
 {
   ma_sound_set_end_callback((ma_sound *)sound, endCallback, userData);
