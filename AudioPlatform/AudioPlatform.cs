@@ -44,7 +44,10 @@ public static class AudioPlatform
 	public static extern void SoundSetVolume(IntPtr soundGroup, float value);
 
 	[DllImport(DLL)]
-	public static extern IntPtr SoundDestroy(ref IntPtr handle);
+	public static extern IntPtr SoundDestroy(IntPtr handle);
+
+	[DllImport(DLL)]
+	public static extern void SoundStop(IntPtr handle);
 
 	[DllImport(DLL)]
 	public static extern bool SoundPlay(IntPtr handle);

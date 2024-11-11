@@ -110,6 +110,10 @@ AUDIO_API void SoundDestroy(Sound *sound)
   }
 }
 
+AUDIO_API void SoundStop(Sound *sound){
+  ma_sound_stop((ma_sound *) sound);
+}
+
 AUDIO_API void SetListenerDirection(ma_uint32 listenerIndex, float forwardX, float forwardY, float forwardZ)
 {
   ma_engine_listener_set_direction(&engine, listenerIndex, forwardX, forwardY, forwardZ);

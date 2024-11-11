@@ -12,12 +12,13 @@ class Program
       AudioPlatform.SoundSetLooping(handle, true);
     });
     t.Start();
-    Console.WriteLine("CACA1");
+    Console.WriteLine("START THREAD");
 
     Thread.Sleep(5000);
 
-    AudioPlatform.SoundDestroy(ref handle);
-    Console.WriteLine("CACA");
+    Console.WriteLine($"HANDLE {handle}");
+    AudioPlatform.SoundStop(handle);
+    Console.WriteLine("FINISHED STOPPED");
     AudioPlatform.Dispose();
   }
 }
