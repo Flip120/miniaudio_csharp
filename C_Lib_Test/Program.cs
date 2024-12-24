@@ -8,6 +8,9 @@ class Program
     var handle = AudioPlatform.SoundCreate("assets/audio/door_open.wav", 0, sfxGroup);
     var t = new Thread(() =>
     {
+      Console.WriteLine("BEFORE REWIND");
+      AudioPlatform.SoundRewind(handle);
+      Console.WriteLine("AFTER REWIND");
       AudioPlatform.SoundPlay(handle);
       AudioPlatform.SoundSetLooping(handle, true);
     });

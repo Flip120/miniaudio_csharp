@@ -90,6 +90,10 @@ AUDIO_API int SoundPlay(Sound *sound)
   return true;
 }
 
+AUDIO_API void SoundRewind(Sound *sound){
+  ma_sound_seek_to_pcm_frame((ma_sound *) sound, 0);
+}
+
 AUDIO_API void SoundSetLooping(Sound *sound, bool looping){
   ma_sound_set_looping((ma_sound *) sound, looping);
 }

@@ -53,6 +53,9 @@ public static class AudioPlatform
 	public static extern bool SoundPlay(IntPtr handle);
 
 	[DllImport(DLL)]
+	public static extern void SoundRewind(IntPtr handle);
+
+	[DllImport(DLL)]
 	public static extern void SoundSetLooping(IntPtr handle, bool looping);
 
 	[DllImport(DLL)]

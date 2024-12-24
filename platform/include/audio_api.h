@@ -37,6 +37,7 @@ AUDIO_API Sound *SoundCreate(const char *audioFilePath, SoundFlags flags, SoundG
 AUDIO_API float SoundGetVolume(Sound *sound);
 AUDIO_API void SoundSetVolume(Sound *sound, float value);
 AUDIO_API int SoundPlay(Sound *sound);
+AUDIO_API void SoundRewind(Sound* handle);
 AUDIO_API void SoundSetEndCallback(Sound *sound, ma_sound_end_proc endCallback, void *userData);
 AUDIO_API void SoundDestroy(Sound *handle);
 AUDIO_API void SoundSetLooping(Sound* handle, bool looping);
